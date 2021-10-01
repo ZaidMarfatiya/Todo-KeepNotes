@@ -57,7 +57,7 @@ def createtodo(request):
             newtodo.save()
             return redirect('currenttodos')
         except ValueError:
-            return render(request, 'todo/createtodo.html', {'form':TodoForm(), 'error':'Bad data passed in. Try again.'})
+            return render(request, 'todo/createtodo.html', {'form':TodoForm(), 'error':'Bad data passed in. Try again!'})
 
 @login_required
 def currenttodos(request):
@@ -81,7 +81,7 @@ def viewtodo(request, todo_pk):
             form.save()
             return redirect('currenttodos')
         except ValueError:
-            return render(request, 'todo/viewtodo.html', {'todo':todo, 'form':form, 'error':'Bad Info.'})
+            return render(request, 'todo/viewtodo.html', {'todo':todo, 'form':form, 'error':'Bad Info!'})
 
 @login_required
 def completetodo(request, todo_pk):
